@@ -1,4 +1,9 @@
 ---
+  - hosts: all
+    roles:
+      - oefenweb.fail2ban
+    tags: common
+
   - hosts: grafana
     become: yes
     roles:

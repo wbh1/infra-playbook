@@ -1,6 +1,4 @@
 ---
-ansible_ssh_user: ansible
-ansible_ssh_port: 2222
 
 grafana_security:
   admin_user: admin
