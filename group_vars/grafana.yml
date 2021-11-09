@@ -1,0 +1,26 @@
+---
+ansible_ssh_user: ansible
+ansible_ssh_port: 2222
+
+grafana_security:
+  admin_user: admin
+  admin_password: !vault |
+            $ANSIBLE_VAULT;1.1;AES256
+            37396432663231393931343564386135656130333337656438653337306330383662663261316361
+            3665396664306630616439663965613466396534346635610a333033653763326536633332626663
+            38646132626434623536333335393562623564626463646331363263656430633161303430346463
+            6666333737623531310a313139363033346261666232613436313433323033343533666462373639
+            31313539653033626331663033363330303834313135616431386438363133613363386430363135
+            3434643633366430383533396539313465316339323461643561
+
+grafana_port: 443
+grafana_cap_net_bind_service: true
+
+grafana_url: "https://grafana.hegedus.wtf"
+
+grafana_server:
+  protocol: https
+  cert_file: /etc/letsencrypt/live/grafana.hegedus.wtf/fullchain.pem
+  cert_key: /etc/letsencrypt/live/grafana.hegedus.wtf/privkey.pem
+  enable_gzip: true
+  enforce_domain: true
