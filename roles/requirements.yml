@@ -3,3 +3,6 @@
 
 - src: oefenweb.fail2ban
   version: v3.4.1
+
+- src: geerlingguy.certbot
+  version: 4.2.0

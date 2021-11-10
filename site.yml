@@ -8,3 +8,5 @@
     become: yes
     roles:
       - role: cloudalchemy.grafana
+      - role: geerlingguy.certbot
+        tags: certbot
