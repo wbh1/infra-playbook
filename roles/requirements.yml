@@ -1,11 +1,16 @@
 ---
-- src: cloudalchemy.grafana
+collections:
+  - name: community.general
+    version: 3.8.1
 
-- src: oefenweb.fail2ban
-  version: v3.4.1
+roles:
+  - src: cloudalchemy.grafana
 
-- src: geerlingguy.certbot
-  version: 4.2.0
+  - src: oefenweb.fail2ban
+    version: v3.4.1
 
-- src: willshersystems.sshd
-  version: v0.14.0
+  - src: geerlingguy.certbot
+    version: 4.2.0
+
+  - src: willshersystems.sshd
+    version: v0.14.0
