@@ -13,11 +13,22 @@
     roles:
       - oefenweb.fail2ban
     tags: common, bootstrap
-
+  
+  - hosts: certbot
+    become: yes
+    roles:
+      - role: geerlingguy.certbot
+        tags: certbot
+    post_tasks:
+      - name: change ownership of letsencrypt dirs
+        file:
+          path: /etc/letsencrypt
+          owner: "{{ certbot_user }}"
+          recurse: yes
+        when: snapd_install is changed
+  
   - hosts: grafana
     become: yes
     roles:
       - role: cloudalchemy.grafana
-      - role: geerlingguy.certbot
-        tags: certbot
     tags: grafana

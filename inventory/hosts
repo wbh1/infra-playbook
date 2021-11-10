@@ -1,2 +1,5 @@
 [grafana]
 grafana1.hegedus.wtf
+
+[certbot:children]
+grafana

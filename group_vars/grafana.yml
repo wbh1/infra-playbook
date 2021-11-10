@@ -14,12 +14,13 @@ grafana_security:
 grafana_port: 443
 grafana_cap_net_bind_service: true
 
-grafana_url: "https://grafana.hegedus.wtf"
+grafana_url: "https://{{ansible_nodename}}"
+grafana_domain: "{{ansible_nodename}}"
 
 grafana_server:
   protocol: https
-  cert_file: /etc/letsencrypt/live/grafana.hegedus.wtf/fullchain.pem
-  cert_key: /etc/letsencrypt/live/grafana.hegedus.wtf/privkey.pem
+  cert_file: /etc/letsencrypt/live/{{ansible_nodename}}/fullchain.pem
+  cert_key: /etc/letsencrypt/live/{{ansible_nodename}}/privkey.pem
   enable_gzip: true
   enforce_domain: true
 
@@ -35,3 +36,6 @@ certbot_create_standalone_stop_services: []
 certbot_certs:
   - domains:
     - "{{ ansible_nodename }}"
+
+# This is unrelated to the Galaxy role
+certbot_user: grafana
