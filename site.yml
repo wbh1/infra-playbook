@@ -12,7 +12,7 @@
   - hosts: all
     roles:
       - oefenweb.fail2ban
-    tags: common
+    tags: common, bootstrap
 
   - hosts: grafana
     become: yes
