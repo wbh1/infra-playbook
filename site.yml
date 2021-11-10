@@ -1,4 +1,14 @@
 ---
+  - name: bootstrap
+    hosts: all
+    roles:
+      - bootstrap
+      - willshersystems.sshd
+    vars:
+      ansible_ssh_user: root
+      ansible_ssh_port: 22
+    tags: never, bootstrap
+
   - hosts: all
     roles:
       - oefenweb.fail2ban
@@ -10,3 +20,4 @@
       - role: cloudalchemy.grafana
       - role: geerlingguy.certbot
         tags: certbot
+    tags: grafana
