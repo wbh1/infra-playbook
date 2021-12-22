@@ -3,6 +3,3 @@ grafana1.hegedus.wtf
 
 [certbot:children]
 grafana
-
-[github]
-githubrunner1.hegedus.wtf

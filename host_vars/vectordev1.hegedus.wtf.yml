@@ -1,0 +1,11 @@
+# Certbot
+# Debian creates a Systemd timer; no need for the cron
+certbot_auto_renew: false
+
+certbot_install_method: snap
+certbot_admin_email: will@wbhegedus.me
+certbot_create_if_missing: true
+certbot_create_standalone_stop_services: []
+certbot_certs:
+  - domains:
+    - "{{ ansible_nodename }}"
