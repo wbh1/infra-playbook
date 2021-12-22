@@ -16,3 +16,6 @@ fail2ban_services:
     port: "{{ sshd_port }}" 
     maxretry: 5
     bantime: -1
+  
+node_exporter_version: 1.3.1
+node_exporter_web_listen_address: 127.0.0.1:9100

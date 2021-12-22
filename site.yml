@@ -1,6 +1,6 @@
 ---
   - name: bootstrap
-    hosts: all
+    hosts: ansible 
     roles:
       - bootstrap
       - willshersystems.sshd
@@ -9,12 +9,13 @@
       ansible_ssh_port: 22
     tags: never, bootstrap
 
-  - hosts: all
+  - hosts: ansible
     roles:
       - oefenweb.fail2ban
+      - cloudalchemy.node_exporter
     tags: common, bootstrap
   
-  - hosts: certbot
+  - hosts: grafana1.hegedus.wtf,vectordev1.hegedus.wtf
     become: yes
     roles:
       - role: geerlingguy.certbot
@@ -27,7 +28,7 @@
           recurse: yes
         when: snapd_install is changed
   
-  - hosts: grafana
+  - hosts: grafana1.hegedus.wtf
     become: yes
     roles:
       - role: cloudalchemy.grafana

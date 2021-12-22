@@ -14,3 +14,6 @@ roles:
 
   - src: willshersystems.sshd
     version: v0.14.0
+  
+  - src: cloudalchemy.node_exporter
+    version: 2.0.0
