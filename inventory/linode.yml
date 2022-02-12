@@ -1,3 +1,6 @@
 ---
 plugin: community.general.linode
 access_token: "{{ lookup('ini', 'token section=wbh1 file=~/.config/linode-cli' ) }}"
+groups:
+  blog: "label == 'wbhegedus.me'"
+  salt: "'salt' in label"
