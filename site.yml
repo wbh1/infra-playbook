@@ -34,3 +34,22 @@
     roles:
       - role: cloudalchemy.grafana
     tags: grafana
+  
+  - hosts: ansible
+    become: yes
+    tasks:
+      - name: install common apt packages
+        ansible.builtin.apt:
+          name: "{{ item }}"
+          state: present
+        loop:
+          - python3-pip
+          - python3-setuptools
+      
+      - name: install Ansible pip packages
+        ansible.builtin.pip:
+          name: "{{ item }}"
+          state: present
+        loop:
+          - ansible==5.7.1
+    tags: ansible
