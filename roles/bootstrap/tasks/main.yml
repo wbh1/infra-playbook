@@ -1,6 +1,6 @@
 ---
 - name: Set hostname to its inventory name
   hostname:
-    name: "{{ ansible_nodename }}"
+    name: "{{ inventory_hostname }}"
 - import_tasks: users.yml
 - import_tasks: sudoers.yml
